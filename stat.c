@@ -6,7 +6,7 @@
 /*   By: tfolly <tfolly@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/27 16:39:28 by tfolly            #+#    #+#             */
-/*   Updated: 2016/04/27 18:00:23 by tfolly           ###   ########.fr       */
+/*   Updated: 2016/04/27 18:22:39 by tfolly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,16 +34,14 @@ int main(int ac, char **av)
 	printf("finename : %s\n", av[1]);
 	if (stat(av[1], &buf) == -1)
 		ft_error("stat error");
-	if (buf.st_mode == S_IFREG)
+	if ((buf.st_mode & S_IFMT) == S_IFREG) //comparaison bit a bit du masque
 		printf("fichier ordinaire\n");
+	else if ((buf.st_mode & S_IFMT) == S_IFDIR)
+		printf("repertoire\n");
 	else
 		printf("type inconnu\n");
-	printf("link number : %ld\n", buf.st_nlink);
-	
-
-
-
-	printf("uid : %ld\n", (long)buf.st_uid);
+	printf("link number : %hu\n", buf.st_nlink);
+	printf("user uid : %ld\n", (long)buf.st_uid);
 	
 	struct passwd *pwd;
 	if (!(pwd = getpwuid(buf.st_uid)))
