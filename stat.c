@@ -6,7 +6,7 @@
 /*   By: tfolly <tfolly@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/27 16:39:28 by tfolly            #+#    #+#             */
-/*   Updated: 2016/04/27 18:22:39 by tfolly           ###   ########.fr       */
+/*   Updated: 2016/06/26 17:18:49 by tfolly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 #include <sys/types.h>
 #include <unistd.h>
 #include <grp.h>
+#include "includes/ft_ls.h"
 
 void	ft_error(char *str)
 {
@@ -35,14 +36,14 @@ int main(int ac, char **av)
 	if (stat(av[1], &buf) == -1)
 		ft_error("stat error");
 	if ((buf.st_mode & S_IFMT) == S_IFREG) //comparaison bit a bit du masque
-		printf("fichier ordinaire\n");
+		printf("type : fichier ordinaire\n");
 	else if ((buf.st_mode & S_IFMT) == S_IFDIR)
-		printf("repertoire\n");
+		printf("type : repertoire\n");
 	else
 		printf("type inconnu\n");
 	printf("link number : %hu\n", buf.st_nlink);
 	printf("user uid : %ld\n", (long)buf.st_uid);
-	
+
 	struct passwd *pwd;
 	if (!(pwd = getpwuid(buf.st_uid)))
 		ft_error("no such user");
@@ -52,6 +53,8 @@ int main(int ac, char **av)
 	if (!(sgroup = getgrgid(buf.st_gid)))
 		ft_error("no group");
 	printf("user group : %s\n", sgroup->gr_name);
+
+	printf("%s\n", ft_rights_str(&buf));
 
 	return (0);
 }

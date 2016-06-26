@@ -6,7 +6,7 @@
 /*   By: tfolly <tfolly@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/27 16:39:28 by tfolly            #+#    #+#             */
-/*   Updated: 2016/04/27 17:12:50 by tfolly           ###   ########.fr       */
+/*   Updated: 2016/06/26 17:17:35 by tfolly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ int main(int ac, char **av)
 	while ((entry = readdir(dir)))
 		printf("%s\n", entry->d_name);
 	closedir(dir);
+
 
 
 
