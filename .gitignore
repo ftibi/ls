@@ -1,4 +1,5 @@
 test
+stat
 # Object files
 *.o
 *.ko

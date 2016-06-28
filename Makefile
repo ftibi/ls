@@ -37,13 +37,13 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all, clean, fclean, re, test
+.PHONY: all, clean, fclean, re, test, stat
 
 norme:
 	norminette $(SRC) includes/push_swap.h
 
 stat: $(LIB) $(OBJ)
-	rm -fvstat
+	rm -fv stat
 	$(CC) -o stat.o -c stat.c $(CPPFLAGS)
 	$(CC) -o stat $(OBJ) stat.o $(CPPFLAGS) $(LIB)
 

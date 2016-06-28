@@ -6,7 +6,7 @@
 /*   By: tfolly <tfolly@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/27 16:39:28 by tfolly            #+#    #+#             */
-/*   Updated: 2016/06/28 15:49:44 by tfolly           ###   ########.fr       */
+/*   Updated: 2016/06/28 16:26:56 by tfolly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,12 @@ int main(int ac, char **av)
 	if (ac != 2)
 		ft_error_ls("missing file name");
 	ft_printf("finename : %s\n", av[1]);
-	if (stat(av[1], &buf) == -1)
+	if (lstat(av[1], &buf) == -1)
 		ft_error_ls("stat error");
 	if ((buf.st_mode & S_IFMT) == S_IFREG) //comparaison bit a bit du masque
 		ft_printf("type : fichier ordinaire\n");
+	else if ((buf.st_mode & S_IFMT) == S_IFLNK)
+		ft_printf("type : symlink\n");
 	else if ((buf.st_mode & S_IFMT) == S_IFDIR)
 		ft_printf("type : repertoire\n");
 	else
