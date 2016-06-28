@@ -2,7 +2,7 @@ NAME = ls
 
 SRC_PATH = ./sources
 
-SRC_NAME = ft_rights_str.c
+SRC_NAME = ft_rights_str.c ft_read_ls_opt.c
 
 SRC = $(addprefix $(SRC_PATH)/,$(SRC_NAME))
 
@@ -19,7 +19,7 @@ CPPFLAGS = -I./includes -I./libft/includes
 all: $(NAME)
 
 $(LIB):
-	make -C ./libft
+	make printf -C ./libft
 
 $(NAME):  $(LIB) $(OBJ)
 	$(CC) -o $(NAME) $(OBJ) $(CPPFLAGS) $(LIB)
@@ -45,5 +45,4 @@ norme:
 test: $(LIB) $(OBJ)
 	rm -fv test
 	$(CC) -o stat.o -c stat.c $(CPPFLAGS)
-	$(CC) -o stat $(OBJ) stat.o $(CPPFLAGS) $(LIB)
-	./stat
+	$(CC) -o test $(OBJ) stat.o $(CPPFLAGS) $(LIB)

@@ -6,7 +6,7 @@
 /*   By: tfolly <tfolly@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/26 15:20:30 by tfolly            #+#    #+#             */
-/*   Updated: 2016/06/26 17:12:00 by tfolly           ###   ########.fr       */
+/*   Updated: 2016/06/28 14:40:04 by tfolly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static char	file_type(struct stat buf)
 	if ((S_IFMT & buf.st_mode) == S_IFDIR)
 		return ('d');
 	if ((S_IFMT & buf.st_mode) == S_IFCHR) //peripherique caractere
-		return ('X');
+		return ('c');
 	if ((S_IFMT & buf.st_mode) == S_IFSOCK)
 		return ('X');
 	return ('X');								//corriger les X dans tout le fichier

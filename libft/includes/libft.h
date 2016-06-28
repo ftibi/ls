@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tfolly <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: tfolly <tfolly@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/22 14:55:31 by tfolly            #+#    #+#             */
-/*   Updated: 2016/04/25 14:39:13 by tfolly           ###   ########.fr       */
+/*   Updated: 2016/06/28 14:59:04 by tfolly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdlib.h>
 # define BUFF_SIZE 2
 
+int					ft_printf(const char *format, ...);
 typedef struct		s_stock
 {
 	char			*str;
@@ -101,7 +102,8 @@ char				*ft_strend(char *str);
 int					ft_pow(int x, int n);
 char				*ft_itoa_base(int nbr, unsigned int base);
 char				*ft_uitoa_base(unsigned long long nbr, unsigned int base);
-char				*ft_uitoa_basemaj(unsigned long long nbr, unsigned int base);
+char				*ft_uitoa_basemaj(unsigned long long nbr,
+						unsigned int base);
 char				*ft_litoa_base(long long nbr, unsigned int base);
 unsigned long long	ft_ulpow(unsigned long long nb, int base);
 unsigned long		ft_atoi_base(char *str, int base);
