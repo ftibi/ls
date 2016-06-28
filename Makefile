@@ -42,7 +42,12 @@ re: fclean all
 norme:
 	norminette $(SRC) includes/push_swap.h
 
+stat: $(LIB) $(OBJ)
+	rm -fvstat
+	$(CC) -o stat.o -c stat.c $(CPPFLAGS)
+	$(CC) -o stat $(OBJ) stat.o $(CPPFLAGS) $(LIB)
+
 test: $(LIB) $(OBJ)
 	rm -fv test
-	$(CC) -o stat.o -c stat.c $(CPPFLAGS)
-	$(CC) -o test $(OBJ) stat.o $(CPPFLAGS) $(LIB)
+	$(CC) -o test.o -c test.c $(CPPFLAGS)
+	$(CC) -o test $(OBJ) test.o $(CPPFLAGS) $(LIB)
