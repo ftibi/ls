@@ -7,6 +7,7 @@ a faire
 - fonction d'aff de cette liste chainee. 1er parcours de la liste + affichage du
 	contenu. Puis si -R parcours a nouveau en s'appelant recursivement sur les
 	elements qui ont pour type repertoire (pas sur les symlinks).
+- utilisation de strerror et perror dans un fichier test
 
 notes
 - ls s'arrete a la premiere option invalide
@@ -18,14 +19,14 @@ liste des fonctions autorisees
 - opendir
 - readdir
 - closedir
-- stat
-- lstat
-- getpwuid
-- getgrgid
-- listxattr
-- getxattr
+- stat -- info sur un fichier
+- lstat -- si symlink renvoie les info du link plutot que celles du fichier link
+- getpwuid -- user info
+- getgrgid  -- grp info
+- listxattr -- attr etendus
+- getxattr -- attr etendus
 - time
-- ctime
+- ctime -- renvoie un chaine de char avec la date etc
 - readlink
 - malloc
 - free
