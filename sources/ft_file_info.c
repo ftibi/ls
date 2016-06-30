@@ -6,21 +6,11 @@
 /*   By: tfolly <tfolly@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/30 12:26:54 by tfolly            #+#    #+#             */
-/*   Updated: 2016/06/30 13:06:09 by tfolly           ###   ########.fr       */
+/*   Updated: 2016/06/30 13:17:10 by tfolly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_ls.h"
-
-static void print_file_info(t_file_ls *file)
-{
-	ft_printf("%s\n", file->name);
-	ft_printf("%s:\n", file->path);
-	ft_printf("%s\n", file->user);
-	ft_printf("%s\n", file->group);
-	ft_printf("%s\n", file->rights);
-	ft_putendl("");
-}
 
 int		ft_file_info(char *path, t_file_ls *file)
 {
@@ -36,7 +26,7 @@ int		ft_file_info(char *path, t_file_ls *file)
 	full_path = ft_strjoin(full_path, file->name);
 	// ft_printf("full path : %s\n", full_path);
 	status = lstat(full_path, buf);
-	path = ft_strjoin("./", path);
+	path = ft_strjoin("./", path); //pas forcement necessaire
 	file->path = ft_strdup(path);
 	file->rights = ft_rights_str(buf);
 	if (!(pwd = getpwuid(buf->st_uid)))

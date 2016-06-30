@@ -6,7 +6,7 @@
 /*   By: tfolly <tfolly@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/26 15:20:30 by tfolly            #+#    #+#             */
-/*   Updated: 2016/06/30 12:22:27 by tfolly           ###   ########.fr       */
+/*   Updated: 2016/06/30 13:14:35 by tfolly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ static char	file_type(struct stat buf) // rajouter tube/pipe FIFO
 		return ('d');
 	if ((S_IFMT & buf.st_mode) == S_IFCHR) //peripherique caractere
 		return ('c');
+	if ((S_IFMT & buf.st_mode) == S_IFIFO) //peripherique caractere
+		return ('p');
 	return ('-');								//type unknown??
 }
 

@@ -9,6 +9,8 @@ a faire
 	elements qui ont pour type repertoire (pas sur les symlinks).
 - utilisation de strerror et perror dans un fichier test
 - fonction qui prend un t_list et un file uid, et qui remplit le t_list
+- fonction pour trier les t_list
+- implementer un subdir attribute pour les repertoires
 
 notes
 - ls s'arrete a la premiere option invalide

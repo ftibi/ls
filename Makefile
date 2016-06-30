@@ -3,7 +3,7 @@ NAME = ls
 SRC_PATH = ./sources
 
 SRC_NAME = ft_rights_str.c ft_read_ls_opt.c ft_file_fct.c ft_file_list.c\
-			ft_file_info.c
+			ft_file_info.c ft_print_file_info.c
 
 SRC = $(addprefix $(SRC_PATH)/,$(SRC_NAME))
 
