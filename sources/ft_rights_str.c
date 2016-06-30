@@ -6,17 +6,17 @@
 /*   By: tfolly <tfolly@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/26 15:20:30 by tfolly            #+#    #+#             */
-/*   Updated: 2016/06/28 15:30:06 by tfolly           ###   ########.fr       */
+/*   Updated: 2016/06/30 12:22:27 by tfolly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_ls.h"
 //user/group/others
 // c char device b block device
-static char	file_type(struct stat buf)
+static char	file_type(struct stat buf) // rajouter tube/pipe FIFO
 {
 	if ((S_IFMT & buf.st_mode) == S_IFSOCK) //socket
-		return ('X');
+		return ('s');
 	if ((S_IFMT & buf.st_mode) == S_IFLNK)
 		return ('l');
 	if ((S_IFMT & buf.st_mode) == S_IFREG)
@@ -27,8 +27,7 @@ static char	file_type(struct stat buf)
 		return ('d');
 	if ((S_IFMT & buf.st_mode) == S_IFCHR) //peripherique caractere
 		return ('c');
-	return ('-');								//corriger les X dans tout le fichier
-
+	return ('-');								//type unknown??
 }
 
 static void ft_perm(char *str, struct stat buf)

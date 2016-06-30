@@ -1,13 +1,14 @@
 # ls
 
 a faire
-- refaire ft_error de printf dans libft
+- refaire ft_error de printf dans libft (ou ls_error)
 - fonction qui lit un repertoire et mets tous les fichiers + info dans
 	une liste chainee
 - fonction d'aff de cette liste chainee. 1er parcours de la liste + affichage du
 	contenu. Puis si -R parcours a nouveau en s'appelant recursivement sur les
 	elements qui ont pour type repertoire (pas sur les symlinks).
 - utilisation de strerror et perror dans un fichier test
+- fonction qui prend un t_list et un file uid, et qui remplit le t_list
 
 notes
 - ls s'arrete a la premiere option invalide
