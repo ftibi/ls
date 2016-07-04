@@ -6,7 +6,7 @@
 /*   By: tfolly <tfolly@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/27 19:16:09 by tfolly            #+#    #+#             */
-/*   Updated: 2016/07/04 15:28:14 by thibaultfolly    ###   ########.fr       */
+/*   Updated: 2016/07/04 16:50:57 by thibaultfolly    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ typedef struct			s_file_ls
 }						t_file_ls;
 
 t_file_ls				*ft_new_file();
-t_file_ls				*ft_file_list(char *rep);
+t_file_ls				*ft_file_list(char *rep, t_opt_ls *opt);
 int						ft_file_info(char *path, t_file_ls *file);
 int						ft_print_file_info(t_file_ls *file);
 
@@ -57,5 +57,7 @@ char					*ft_rights_str(struct stat *buf);
 t_opt_ls				*ft_read_ls_opt(char *av1);
 void					ft_error_ls(char *str);
 void					ft_print_all_files(t_file_ls *file, t_opt_ls *opt);
+void					ft_upr_opt(t_file_ls *list, t_opt_ls *opt);
+int						ft_is_dot_file(char *filename);
 
 #endif

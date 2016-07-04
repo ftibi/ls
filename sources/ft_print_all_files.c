@@ -6,7 +6,7 @@
 /*   By: thibault <thibault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/04 15:03:17 by thibault          #+#    #+#             */
-/*   Updated: 2016/07/04 15:24:22 by thibaultfolly    ###   ########.fr       */
+/*   Updated: 2016/07/04 16:47:53 by thibaultfolly    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,10 @@ void	ft_print_all_files(t_file_ls *file, t_opt_ls *opt)
 	file = start;
 	while (file)
 	{
-		if (*(file->rights) == 'd')
+		if (*(file->rights) == 'd' && opt->up_r && !ft_is_dot_file(file->name))
 		{
+			ft_printf("\n./%s:\n", file->name);
+			ft_print_file_info(file->sub);
 			ft_print_all_files(file->sub, opt);
 		}
 		file = file->next;

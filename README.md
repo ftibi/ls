@@ -11,6 +11,7 @@ a faire
 - fonction qui prend un t_list et un file uid, et qui remplit le t_list
 - fonction pour trier les t_list
 - implementer un subdir attribute pour les repertoires
+- fonction pour trier les listes en fonction des options daffichage
 
 notes
 - Commencer par l'option -R

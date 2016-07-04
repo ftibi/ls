@@ -6,7 +6,7 @@
 /*   By: tfolly <tfolly@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/30 11:48:10 by tfolly            #+#    #+#             */
-/*   Updated: 2016/07/04 14:50:01 by thibaultfolly    ###   ########.fr       */
+/*   Updated: 2016/07/04 17:42:00 by thibaultfolly    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,13 @@
 ** trouvés à cette addresse
 */
 
-t_file_ls	*ft_file_list(char *path)
+t_file_ls	*ft_file_list(char *path, t_opt_ls *opt)
 {
 	DIR				*dirr;
 	struct dirent	*dir;
 	t_file_ls		*file;
 	t_file_ls		*start;
+	char			*full_path;
 
 	if (!(dirr = opendir(path)))
 		return (0);
@@ -41,6 +42,18 @@ t_file_ls	*ft_file_list(char *path)
 		}
 		file->name = ft_strdup(dir->d_name);
 		ft_file_info(path, file);
+		ft_printf("salut\n");
+		ft_printf("%s\n", file->rights);
+		ft_printf("%s\n", file->name);
+		if (opt && opt->up_r && !ft_is_dot_file(file->name) && *(file->rights) == 'd')
+		{
+			full_path = ft_strjoin(file->path, "/");
+			full_path = ft_strjoin(full_path, file->name);
+			// exit(0);
+			file->sub = ft_file_list(full_path, opt);
+		}
+			// ft_upr_opt(file, opt);
+		ft_printf("bye\n");
 		// ft_printf("%s\n", file->name);
 	}
 	return (start);
