@@ -13,9 +13,12 @@ a faire
 - implementer un subdir attribute pour les repertoires
 
 notes
+- Commencer par l'option -R
 - ls s'arrete a la premiere option invalide
 - ft_rights ne renvoie pas le bon type de fichier pour symlink? utiliser lstat au lieu de stat
 - ls sur un fichier affiche le fichier
+- le total est le nombre de blocs
+- la deuxiement colonne est le nombre de liens
 
 liste des fonctions autorisees
 - write

@@ -6,11 +6,16 @@
 /*   By: tfolly <tfolly@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/30 11:48:10 by tfolly            #+#    #+#             */
-/*   Updated: 2016/06/30 13:26:51 by tfolly           ###   ########.fr       */
+/*   Updated: 2016/07/04 14:50:01 by thibaultfolly    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_ls.h"
+
+/*
+** Lit un chemin, renvoit une liste chainee qui contient tous les fichiers
+** trouvés à cette addresse
+*/
 
 t_file_ls	*ft_file_list(char *path)
 {

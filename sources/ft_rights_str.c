@@ -6,7 +6,7 @@
 /*   By: tfolly <tfolly@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/26 15:20:30 by tfolly            #+#    #+#             */
-/*   Updated: 2016/06/30 13:14:35 by tfolly           ###   ########.fr       */
+/*   Updated: 2016/07/04 14:51:47 by thibaultfolly    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,10 @@ static void ft_perm(char *str, struct stat buf)
 	str[8] = (S_IWOTH & buf.st_mode) ? 'w' : '-';
 	str[9] = (S_IXOTH & buf.st_mode) ? 'x' : '-';
 }
+
+/*
+** Renvoit une chaine de caracteres qui contient le type de fichier et les droits
+*/
 
 char	*ft_rights_str(struct stat *buf)
 {

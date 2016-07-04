@@ -6,7 +6,7 @@
 /*   By: tfolly <tfolly@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/27 19:16:09 by tfolly            #+#    #+#             */
-/*   Updated: 2016/06/30 13:16:25 by tfolly           ###   ########.fr       */
+/*   Updated: 2016/07/04 14:57:12 by thibaultfolly    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ typedef struct			s_file_ls
 	char				*rights;  // rights et type de fichier idem ?
 	int					edtime;
 	struct s_file_ls	*next;
+	struct s_file_ls	*sub;
 }						t_file_ls;
 
 t_file_ls				*ft_new_file();
@@ -54,5 +55,6 @@ int						print_file_info(t_file_ls *file);
 
 char					*ft_rights_str(struct stat *buf);
 int						ft_read_ls_opt(char *av1, t_opt_ls *opt);
+void					ft_error_ls(char *str);
 
 #endif

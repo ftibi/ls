@@ -6,11 +6,16 @@
 /*   By: tfolly <tfolly@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/30 12:26:54 by tfolly            #+#    #+#             */
-/*   Updated: 2016/06/30 13:17:10 by tfolly           ###   ########.fr       */
+/*   Updated: 2016/07/04 14:50:34 by thibaultfolly    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_ls.h"
+
+/*
+** Remplit les infos d'un element de la liste chainee
+*/
+
 
 int		ft_file_info(char *path, t_file_ls *file)
 {
