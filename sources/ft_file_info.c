@@ -6,7 +6,7 @@
 /*   By: tfolly <tfolly@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/30 12:26:54 by tfolly            #+#    #+#             */
-/*   Updated: 2016/07/04 14:50:34 by thibaultfolly    ###   ########.fr       */
+/*   Updated: 2016/07/04 15:16:54 by thibaultfolly    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ int		ft_file_info(char *path, t_file_ls *file)
 		return (0);
 	full_path = ft_strjoin(path, "/");
 	full_path = ft_strjoin(full_path, file->name);
-	// ft_printf("full path : %s\n", full_path);
 	status = lstat(full_path, buf);
 	path = ft_strjoin("./", path); //pas forcement necessaire
 	file->path = ft_strdup(path);
@@ -41,6 +40,6 @@ int		ft_file_info(char *path, t_file_ls *file)
 		return (0);// ft_error_ls("no group");
 	file->group = sgroup->gr_name;
 	//il manque le temps
-	print_file_info(file);
+	// ft_print_file_info(file);
 	return (0);
 }

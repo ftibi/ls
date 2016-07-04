@@ -6,11 +6,11 @@
 /*   By: thibault <thibault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/04 14:38:59 by thibault          #+#    #+#             */
-/*   Updated: 2016/07/04 14:39:39 by thibaultfolly    ###   ########.fr       */
+/*   Updated: 2016/07/04 15:13:34 by thibaultfolly    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/ft_ls.h"
+#include "../includes/ft_ls.h"
 
 void	ft_error_ls(char *str)
 {
