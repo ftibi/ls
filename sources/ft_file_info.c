@@ -6,7 +6,7 @@
 /*   By: tfolly <tfolly@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/30 12:26:54 by tfolly            #+#    #+#             */
-/*   Updated: 2016/07/06 15:29:39 by tfolly           ###   ########.fr       */
+/*   Updated: 2016/07/06 15:53:13 by tfolly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int		ft_file_info(char *path, t_file_ls *file)
 		return (0);// ft_error_ls("no group");
 	file->group = sgroup->gr_name;
 	file->edtime = buf->st_mtime;//date de derniere modif
-	//il manque le temps
+	file->links = (unsigned int)buf->st_nlink;
 	// ft_print_file_info(file);
 	return (0);
 }

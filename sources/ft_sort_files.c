@@ -6,7 +6,7 @@
 /*   By: tfolly <tfolly@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/06 14:29:32 by tfolly            #+#    #+#             */
-/*   Updated: 2016/07/06 15:12:44 by tfolly           ###   ########.fr       */
+/*   Updated: 2016/07/06 15:43:34 by tfolly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,10 @@
 
 // penser a mettre le typedef dans le .h et a static les fct
 
-typedef int (t_sort_func)(t_file_ls *file1, t_file_ls *file2);
 
 static int	ft_time_sort(t_file_ls *file1, t_file_ls *file2)
 {
-	if (file1->edtime > file2->edtime)
+	if (time(&file1->edtime) > time(&file2->edtime))
 		return (1);
 	return (0);
 }
@@ -41,7 +40,7 @@ static int	ft_file_cmp(t_file_ls *file1, t_file_ls *file2, t_opt_ls *opt)
 	return (sort_func(file1, file2));
 }
 
-int			ft_file_sorted(t_file_ls *file, t_opt_ls *opt)
+static int	ft_file_sorted(t_file_ls *file, t_opt_ls *opt)
 {
 	while (file && file->next)
 	{

@@ -6,7 +6,7 @@
 /*   By: tfolly <tfolly@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/26 17:24:47 by tfolly            #+#    #+#             */
-/*   Updated: 2016/07/04 15:34:34 by thibaultfolly    ###   ########.fr       */
+/*   Updated: 2016/07/06 16:08:40 by tfolly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,15 +45,12 @@ static void	update_opt(t_opt_ls *opt, char c, int val)
 		opt->t = val;
 }
 
-t_opt_ls		*ft_read_ls_opt(char *av1)
+t_opt_ls		*ft_read_ls_opt(char *av1, t_opt_ls *opt)
 {
 	const char	opt_tab[5] = "lRart";
-	t_opt_ls	*opt;
 
 	if (!av1 || av1[0] != '-')
 		return (0);
-	if (!(opt = (t_opt_ls*)ft_memalloc(sizeof(t_opt_ls))))
-		ft_error_ls("malloc error\n");
 	av1++;
 	while (*av1)
 	{
