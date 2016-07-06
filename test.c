@@ -6,7 +6,7 @@
 /*   By: tfolly <tfolly@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/27 16:39:28 by tfolly            #+#    #+#             */
-/*   Updated: 2016/07/06 16:07:39 by tfolly           ###   ########.fr       */
+/*   Updated: 2016/07/06 16:09:12 by tfolly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int main(int ac, char **av)
 		file = ft_file_list(av[1], opt);
 	else //if (ac == 3)
 	{
-		opt = ft_read_ls_opt(av[1]);
+		opt = ft_read_ls_opt(av[1], opt);
 		file = ft_file_list(av[2], opt);
 	}
 	ft_print_all_files(file, opt);

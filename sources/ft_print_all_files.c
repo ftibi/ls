@@ -6,7 +6,7 @@
 /*   By: thibault <thibault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/04 15:03:17 by thibault          #+#    #+#             */
-/*   Updated: 2016/07/06 16:00:46 by tfolly           ###   ########.fr       */
+/*   Updated: 2016/07/06 16:16:09 by tfolly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,10 @@ void	ft_print_all_files(t_file_ls *file, t_opt_ls *opt)
 	while (file)
 	{
 		ft_print_file_info(file, opt);
+		ft_printf("ici\n");
 		file = file->next;
+		if (file)
+			ft_printf("ici\n");
 	}
 	file = start;
 	while (file && opt->up_r)
