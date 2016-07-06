@@ -6,7 +6,7 @@
 /*   By: thibault <thibault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/04 15:03:17 by thibault          #+#    #+#             */
-/*   Updated: 2016/07/04 18:01:50 by thibaultfolly    ###   ########.fr       */
+/*   Updated: 2016/07/06 14:50:36 by tfolly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 /*
 ** Parcours file et l'affiche en tenant compte de l'option -R si elle est là
+** Il faudrait mettre la fonction de tri ici
 */
 
 void	ft_print_all_files(t_file_ls *file, t_opt_ls *opt)
