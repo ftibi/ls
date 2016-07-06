@@ -20,6 +20,7 @@ notes
 - ls sur un fichier affiche le fichier
 - le total est le nombre de blocs
 - la deuxiement colonne est le nombre de liens
+- mon option z formate la taille du fichier comme om-zsh
 
 liste des fonctions autorisees
 - write
