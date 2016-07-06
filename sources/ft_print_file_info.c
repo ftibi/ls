@@ -6,13 +6,36 @@
 /*   By: tfolly <tfolly@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/30 13:16:49 by tfolly            #+#    #+#             */
-/*   Updated: 2016/07/06 16:10:36 by tfolly           ###   ########.fr       */
+/*   Updated: 2016/07/06 16:59:08 by tfolly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_ls.h"
 
-int		ft_print_file_info(t_file_ls *file, t_opt_ls *opt)
+static int	ft_size_fmt(unsigned int size, t_opt_ls *opt)
+{
+	if (size >= 1000000 && opt->z)
+	{
+		if (size < 10000000)
+			ft_printf("%10d.%dM", size / 1000000, (size % 1000000) / 100000);
+		else
+			ft_printf("%12dM", size / 1000000);
+	}
+	else if (size >= 1000 && opt->z)
+	{
+		if (size < 10000)
+			ft_printf("%10d.%dK", size / 1000, (size % 1000) / 100);
+		else
+			ft_printf("%12dK", size / 1000);
+	}
+	else if (opt->z)
+		ft_printf("%12dB", size);
+	else
+		ft_printf("%11d", size);
+	return (0);
+}
+
+int			ft_print_file_info(t_file_ls *file, t_opt_ls *opt)
 {
 	char	*mytime;
 
@@ -23,11 +46,13 @@ int		ft_print_file_info(t_file_ls *file, t_opt_ls *opt)
 		mytime = ft_strsub(ctime(&file->edtime), 4, 12);
 		ft_printf("%s", file->rights);
 		ft_putstr("  ");
-		ft_printf("%d", file->links);
+		ft_printf("%3d", file->links);
 		ft_putstr("  ");
 		ft_printf("%10s", file->user);
 		ft_putstr("  ");
 		ft_printf("%10s", file->group);
+		ft_putstr("  ");
+		ft_size_fmt(file->size, opt);
 		ft_putstr("  ");
 		ft_printf("%10s", mytime);
 		ft_putstr("  ");

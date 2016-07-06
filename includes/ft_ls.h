@@ -6,7 +6,7 @@
 /*   By: tfolly <tfolly@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/27 19:16:09 by tfolly            #+#    #+#             */
-/*   Updated: 2016/07/06 16:08:37 by tfolly           ###   ########.fr       */
+/*   Updated: 2016/07/06 16:58:55 by tfolly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ typedef struct		s_opt_ls
 	int				up_r;
 	int				r;
 	int				t;
+	int				z;
 }					t_opt_ls;
 
 typedef struct			s_file_ls
