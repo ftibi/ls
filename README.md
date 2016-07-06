@@ -4,6 +4,7 @@ a faire
 - utilisation de strerror et perror dans un fichier test
 - fonction pour trier les t_list
 - fonction pour trier les listes en fonction des options daffichage
+- afficher la cible des symlinks
 
 notes
 - Commencer par l'option -R
