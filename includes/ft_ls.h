@@ -6,7 +6,7 @@
 /*   By: tfolly <tfolly@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/27 19:16:09 by tfolly            #+#    #+#             */
-/*   Updated: 2016/07/04 16:50:57 by thibaultfolly    ###   ########.fr       */
+/*   Updated: 2016/07/06 15:29:32 by tfolly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@
 # include <sys/types.h>
 # include <unistd.h>
 # include <grp.h>
+# include <time.h>
+
 
 typedef struct		s_opt_ls
 {
@@ -43,7 +45,7 @@ typedef struct			s_file_ls
 	char				*user;
 	char				*group;
 	char				*rights;  // rights et type de fichier idem ?
-	int					edtime;
+	time_t 				edtime;
 	struct s_file_ls	*next;
 	struct s_file_ls	*sub;
 }						t_file_ls;

@@ -6,7 +6,7 @@
 /*   By: tfolly <tfolly@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/27 16:39:28 by tfolly            #+#    #+#             */
-/*   Updated: 2016/06/28 16:26:56 by tfolly           ###   ########.fr       */
+/*   Updated: 2016/07/06 15:26:54 by tfolly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,6 @@
 #include <grp.h>
 #include <time.h>
 #include "includes/ft_ls.h"
-
-void	ft_error_ls(char *str)
-{
-	ft_printf("error : %s\n", str);
-	exit(0);
-}
 
 int main(int ac, char **av)
 {
