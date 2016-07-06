@@ -6,7 +6,7 @@
 /*   By: tfolly <tfolly@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/27 16:39:28 by tfolly            #+#    #+#             */
-/*   Updated: 2016/07/06 16:30:06 by tfolly           ###   ########.fr       */
+/*   Updated: 2016/07/06 17:47:35 by tfolly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,11 +49,10 @@ int main(int ac, char **av)
 		opt = ft_read_ls_opt(av[1], opt);
 		file = ft_file_list(av[2], opt);
 	}
+	blkcnt_t	*total;
+	total = (blkcnt_t*)ft_memalloc(sizeof(blkcnt_t));
+	ft_total_block(file, total);
+	ft_printf("total %ld\n", (long)*total);
 	ft_print_all_files(file, opt);
-	// while (file)
-	// {
-	// 	ft_printf("%s\n", file->name);
-	// 	file = file->next;
-	// }
 	return (0);
 }

@@ -5,7 +5,7 @@ SRC_PATH = ./sources
 SRC_NAME = ft_rights_str.c ft_read_ls_opt.c ft_file_fct.c ft_file_list.c\
 			ft_file_info.c ft_print_file_info.c ft_error_ls.c \
 			ft_upr_opt.c ft_print_all_files.c ft_is_dot_file.c ft_sort_files.c\
-			ft_opt_init.c
+			ft_opt_init.c ft_total_block.c
 
 SRC = $(addprefix $(SRC_PATH)/,$(SRC_NAME))
 

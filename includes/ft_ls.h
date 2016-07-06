@@ -6,7 +6,7 @@
 /*   By: tfolly <tfolly@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/27 19:16:09 by tfolly            #+#    #+#             */
-/*   Updated: 2016/07/06 16:58:55 by tfolly           ###   ########.fr       */
+/*   Updated: 2016/07/06 17:46:09 by tfolly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ typedef struct			s_file_ls
 	char				type;
 	int					size;
 	unsigned int		links;
+	blkcnt_t			blocks;
 	char				*user;
 	char				*group;
 	char				*rights;  // rights et type de fichier idem ?
@@ -65,6 +66,7 @@ void					ft_upr_opt(t_file_ls *list, t_opt_ls *opt);
 int						ft_is_dot_file(char *filename);
 t_file_ls				*ft_sort_files(t_file_ls *file, t_opt_ls *opt);
 t_opt_ls				*ft_opt_init(void);
+void					ft_total_block(t_file_ls *file, blkcnt_t *total);
 
 typedef int (t_sort_func)(t_file_ls *file1, t_file_ls *file2);
 

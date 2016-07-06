@@ -6,13 +6,13 @@
 /*   By: tfolly <tfolly@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/30 11:49:20 by tfolly            #+#    #+#             */
-/*   Updated: 2016/07/04 15:13:11 by thibaultfolly    ###   ########.fr       */
+/*   Updated: 2016/07/06 17:29:06 by tfolly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_ls.h"
 
-t_file_ls	*ft_new_file()
+t_file_ls	*ft_new_file(void)
 {
 	t_file_ls	*new_file;
 
@@ -28,5 +28,7 @@ t_file_ls	*ft_new_file()
 	new_file->edtime = 0;
 	new_file->next = 0;
 	new_file->sub = 0;
+	new_file->blocks = 0;
+	new_file->links = 0;
 	return (new_file);
 }
