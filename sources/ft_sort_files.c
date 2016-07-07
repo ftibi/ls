@@ -6,7 +6,7 @@
 /*   By: tfolly <tfolly@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/06 14:29:32 by tfolly            #+#    #+#             */
-/*   Updated: 2016/07/07 18:07:16 by tfolly           ###   ########.fr       */
+/*   Updated: 2016/07/07 19:18:36 by thibaultfolly    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static int	ft_file_cmp(t_file_ls *file1, t_file_ls *file2, t_opt_ls *opt)
 		sort_func = ft_time_sort;
 	else
 		sort_func = ft_alpha_sort;
-	return (sort_func(file1, file2));//return un ternaire en fct de opt
+	return ((opt->r) ? !sort_func(file1, file2) : sort_func(file1, file2));//return un ternaire en fct de opt
 }
 
 static int	ft_file_sorted(t_file_ls *file, t_opt_ls *opt)
