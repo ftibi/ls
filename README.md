@@ -5,6 +5,7 @@ a faire
 - fonction pour trier les t_list
 - fonction pour trier les listes en fonction des options daffichage
 - afficher la cible des symlinks
+- fix le tri par temps !?!?!?!?!
 
 notes
 - Commencer par l'option -R

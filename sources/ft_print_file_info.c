@@ -6,7 +6,7 @@
 /*   By: tfolly <tfolly@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/30 13:16:49 by tfolly            #+#    #+#             */
-/*   Updated: 2016/07/07 16:29:37 by tfolly           ###   ########.fr       */
+/*   Updated: 2016/07/07 18:16:30 by tfolly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,18 @@ int			ft_print_file_info(t_file_ls *file, t_opt_ls *opt)
 		ft_putstr("  ");
 	}
 	ft_printf("%s", file->name);
+	if (*(file->rights) == 'l')
+	{
+		char	*full_path;
+		size_t	bufsize = 40;
+		char	*buf = ft_memalloc(bufsize);
+
+		full_path = ft_strjoin(file->path, "/");
+		full_path = ft_strjoin(full_path, file->name);
+		readlink(full_path, buf, bufsize);
+		ft_printf(" -> %s ", buf);
+
+	}
 	ft_putendl("");
 	return (0);
 }
