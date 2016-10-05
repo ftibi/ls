@@ -1,6 +1,7 @@
 # ls
 
 a faire
+- Attention : la premiere lettre de la date doit etre en minuscule et non pas majuscule
 -  en prio : faire le main plutot que de devoir utiliser test.c
 - utilisation de strerror et perror dans un fichier test
 - fonction pour trier les t_list
