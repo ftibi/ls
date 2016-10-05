@@ -6,7 +6,7 @@
 /*   By: thibault <thibault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/18 14:52:48 by thibault          #+#    #+#             */
-/*   Updated: 2016/09/18 15:38:22 by thibaultfolly    ###   ########.fr       */
+/*   Updated: 2016/10/05 17:36:21 by thibaultfolly    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,9 @@ int		 main(int ac, char **av)
 	t_opt_ls	*opt;
 	int			i;
 
+//idee pour reformater
+// mettre le nom de base a "." et le changer que si un param autre que les options est entré
+// il faut definitivement refaire ca de maniere plus elegante
 	opt = ft_opt_init();
 	if (ac == 1)
 		file = ft_file_list(".", opt);
