@@ -6,7 +6,7 @@
 /*   By: tfolly <tfolly@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/06 14:29:32 by tfolly            #+#    #+#             */
-/*   Updated: 2016/10/06 19:51:20 by thibaultfolly    ###   ########.fr       */
+/*   Updated: 2016/10/06 20:27:25 by thibaultfolly    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,18 @@
 
 static int	ft_time_sort(t_file_ls *file1, t_file_ls *file2)
 {
-	time_t	time1;
-	time_t	time2;
+	time_t	*time1;
+	time_t	*time2;
 
-	time1 = time(&file1->edtime);
-	time2 = time(&file2->edtime);
-	if ((time1 - time2) <= 0)
+	if (!(time1 = (time_t*)ft_memalloc(sizeof(time_t))))
+		ft_error_ls("malloc error");
+	if (!(time2 = (time_t*)ft_memalloc(sizeof(time_t))))
+		ft_error_ls("malloc error");
+
+	time1 = ft_memcpy(time1, &(file1->edtime), sizeof(time1));
+	time2 = ft_memcpy(time2, &(file2->edtime), sizeof(time2));
+
+	if (*time1 >= *time2) //ici il faudra free time1 et time2
 		return (1);
 	return (0);
 }
