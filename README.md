@@ -2,16 +2,14 @@
 
 a faire
 - Attention : la premiere lettre de la date doit etre en minuscule et non pas majuscule
--  en prio : faire le main plutot que de devoir utiliser test.c
+- refaire le main de facon plus elegante
 - utilisation de strerror et perror dans un fichier test
-- fonction pour trier les t_list
-- fonction pour trier les listes en fonction des options daffichage
-- afficher la cible des symlinks
 - fix le tri par temps !?!?!?!?!
+- ne pas afficher le total si il n'y a pas l'option l
 
 notes
 - Le test.c fonctionne avec 3 args pour le mmt
-- ls s'arrete a la premiere option invalide
+- ls s'arrete a la premiere option invalide (ok)
 - ft_rights ne renvoie pas le bon type de fichier pour symlink? utiliser lstat au lieu de stat
 - ls sur un fichier affiche le fichier
 - le total est le nombre de blocs

@@ -6,7 +6,7 @@
 /*   By: tfolly <tfolly@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/26 17:24:47 by tfolly            #+#    #+#             */
-/*   Updated: 2016/07/06 17:01:10 by tfolly           ###   ########.fr       */
+/*   Updated: 2016/10/06 18:26:49 by thibaultfolly    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 static void	ft_illegal_opt(char c)
 {
 	ft_printf("ls: illegal option -- %c\n", c);
+	ft_printf("usage: ls [-latrRz] [file ...]\n");
+	exit(0);
 }
 
 static int	ft_is_in_tab(char c, char *tab, int tab_size)

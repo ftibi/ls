@@ -6,7 +6,7 @@
 /*   By: tfolly <tfolly@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/30 11:48:10 by tfolly            #+#    #+#             */
-/*   Updated: 2016/07/06 16:33:13 by tfolly           ###   ########.fr       */
+/*   Updated: 2016/10/06 18:35:15 by thibaultfolly    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,10 @@ t_file_ls	*ft_file_list(char *path, t_opt_ls *opt)
 	t_file_ls		*start;
 	char			*full_path;
 
-	if (!(dirr = opendir(path)))
-		return (0);
+	if (!(dirr = opendir(path)))// c'est ici que je dois faire appel a sterror
+	{
+			return (0);
+	}
 	file = 0;
 	while ((dir = readdir(dirr)))
 	{
