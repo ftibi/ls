@@ -5,7 +5,9 @@ a faire
 (ok pour ouverture d'un fichier raté)
 - refaire le main de facon plus elegante
 - utilisation de strerror et perror pour les autres erreurs ? (meme si elles narrivent pas ?)
-- fix le tri par temps !?!?!?!?!
+- FIX LE TRI PAR LE TEMPS ??!!??!!??!!
+( The return value is also stored in tloc, provided that tloc is non-null.)
+C'est pour ca que ca bug !
 - ls sur un fichier affiche le nom du fichier
 
 notes
@@ -17,6 +19,7 @@ notes
 bugs connus
 - inconsistance du total si on fait ls -l . dir1 mais c coherent avec la commande de omzsh (l . dir1)
 - tri par le temps buggé
+- boucle infinie si opt -tlr
 
 liste des fonctions autorisees
 - write

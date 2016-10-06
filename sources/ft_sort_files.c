@@ -6,7 +6,7 @@
 /*   By: tfolly <tfolly@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/06 14:29:32 by tfolly            #+#    #+#             */
-/*   Updated: 2016/07/07 19:18:36 by thibaultfolly    ###   ########.fr       */
+/*   Updated: 2016/10/06 19:51:20 by thibaultfolly    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,12 @@
 
 static int	ft_time_sort(t_file_ls *file1, t_file_ls *file2)
 {
-	if (time(&file1->edtime) >= time(&file2->edtime))
+	time_t	time1;
+	time_t	time2;
+
+	time1 = time(&file1->edtime);
+	time2 = time(&file2->edtime);
+	if ((time1 - time2) <= 0)
 		return (1);
 	return (0);
 }
