@@ -6,7 +6,7 @@
 /*   By: thibault <thibault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/18 14:52:48 by thibault          #+#    #+#             */
-/*   Updated: 2016/10/05 17:36:21 by thibaultfolly    ###   ########.fr       */
+/*   Updated: 2016/10/06 18:41:42 by thibaultfolly    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ static int	main_loop(t_opt_ls *opt, t_file_ls *file)
 	if (!(total = (blkcnt_t*)ft_memalloc(sizeof(blkcnt_t))))
 		ft_error_ls("malloc");
 	ft_total_block(file, total);
-	ft_printf("total %ld\n", (long)*total);
+	if (opt->l)
+		ft_printf("total %ld\n", (long)*total);
 	ft_print_all_files(file, opt);
 	return (1);
 }

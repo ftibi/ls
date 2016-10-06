@@ -6,7 +6,7 @@
 /*   By: tfolly <tfolly@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/27 19:16:09 by tfolly            #+#    #+#             */
-/*   Updated: 2016/07/06 17:46:09 by tfolly           ###   ########.fr       */
+/*   Updated: 2016/10/06 18:40:59 by thibaultfolly    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@
 # include <unistd.h>
 # include <grp.h>
 # include <time.h>
+#include <stdio.h>
 
 
 typedef struct		s_opt_ls
