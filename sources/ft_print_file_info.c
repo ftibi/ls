@@ -6,7 +6,7 @@
 /*   By: tfolly <tfolly@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/30 13:16:49 by tfolly            #+#    #+#             */
-/*   Updated: 2016/07/07 18:16:30 by tfolly           ###   ########.fr       */
+/*   Updated: 2016/10/06 18:48:52 by thibaultfolly    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ int			ft_print_file_info(t_file_ls *file, t_opt_ls *opt)
 	if (opt->l)
 	{
 		mytime = ft_strsub(ctime(&file->edtime), 4, 12);
+		*mytime = ft_tolower(*mytime);
 		ft_printf("%s", file->rights);
 		ft_putstr("  ");
 		ft_printf("%3d", file->links);
