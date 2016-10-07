@@ -6,13 +6,11 @@
 /*   By: tfolly <tfolly@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/06 14:29:32 by tfolly            #+#    #+#             */
-/*   Updated: 2016/10/06 20:27:25 by thibaultfolly    ###   ########.fr       */
+/*   Updated: 2016/10/07 17:47:33 by thibaultfolly    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_ls.h"
-
-// penser a mettre le typedef dans le .h et a static les fct
 
 
 static int	ft_time_sort(t_file_ls *file1, t_file_ls *file2)
@@ -43,6 +41,7 @@ static int	ft_alpha_sort(t_file_ls *file1, t_file_ls *file2)
 static int	ft_file_cmp(t_file_ls *file1, t_file_ls *file2, t_opt_ls *opt)
 {
 	t_sort_func	*sort_func;
+	// ft_putendl("filecmp");
 
 	if (opt->t)
 		sort_func = ft_time_sort;

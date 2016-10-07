@@ -8,7 +8,7 @@ a faire
 - FIX LE TRI PAR LE TEMPS ??!!??!!??!!
 ( The return value is also stored in tloc, provided that tloc is non-null.)
 C'est pour ca que ca bug !
-- ls sur un fichier affiche le nom du fichier
+- ls sur un fichier affiche le nom du fichier, il va peut etre falloir refaire une LC ? misere
 
 notes
 - ls s'arrete a la premiere option invalide (ok)
