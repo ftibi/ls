@@ -6,7 +6,7 @@
 /*   By: tfolly <tfolly@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/06 14:29:32 by tfolly            #+#    #+#             */
-/*   Updated: 2016/10/07 17:47:33 by thibaultfolly    ###   ########.fr       */
+/*   Updated: 2016/10/07 18:08:36 by thibaultfolly    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,10 @@ static int	ft_time_sort(t_file_ls *file1, t_file_ls *file2)
 	time1 = ft_memcpy(time1, &(file1->edtime), sizeof(time1));
 	time2 = ft_memcpy(time2, &(file2->edtime), sizeof(time2));
 
-	if (*time1 >= *time2) //ici il faudra free time1 et time2
+	if (*time1 > *time2) //ici il faudra free time1 et time2
 		return (1);
+	else if (*time1 == *time2) //ici il faudra free time1 et time2
+		return (2);
 	return (0);
 }
 
@@ -47,6 +49,8 @@ static int	ft_file_cmp(t_file_ls *file1, t_file_ls *file2, t_opt_ls *opt)
 		sort_func = ft_time_sort;
 	else
 		sort_func = ft_alpha_sort;
+	if (2 == sort_func(file1, file2))
+		return (ft_alpha_sort(file1, file2));
 	return ((opt->r) ? !sort_func(file1, file2) : sort_func(file1, file2));//return un ternaire en fct de opt
 }
 

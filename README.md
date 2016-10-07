@@ -20,6 +20,7 @@ bugs connus
 - inconsistance du total si on fait ls -l . dir1 mais c coherent avec la commande de omzsh (l . dir1)
 - tri par le temps buggé
 - boucle infinie si opt -tlr
+- ./ls salut dir1 n'affiche pas l'erreur sur la non existence de salut
 
 liste des fonctions autorisees
 - write
