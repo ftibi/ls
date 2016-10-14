@@ -6,7 +6,7 @@
 /*   By: thibault <thibault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/18 14:52:48 by thibault          #+#    #+#             */
-/*   Updated: 2016/10/07 18:50:50 by thibaultfolly    ###   ########.fr       */
+/*   Updated: 2016/10/14 17:39:17 by thibaultfolly    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,34 +55,40 @@ int		 main(int ac, char **av)
 		file = ft_file_list(".", opt);
 	else if (ac == 2)
 	{
-		file = ft_file_list(".", opt);
 		if (*av[1] == '-')
+		{
 			opt = ft_read_ls_opt(av[1], opt);
+			file = ft_file_list(".", opt);
+		}
 		else
 			file = ft_file_list(av[1], opt);
 	}
-	else if (ac == 3)
+	else if (ac == 3 && *av[1] == '-')
 	{
-		if (*av[1] == '-')
-			opt = ft_read_ls_opt(av[1], opt);
+		opt = ft_read_ls_opt(av[1], opt);
 		file = ft_file_list(av[2], opt);
 	}
 	else
 	{
-		opt = ft_read_ls_opt(av[1], opt);
-		i = 2;
+		if (*av[1] == '-')
+		{
+			opt = ft_read_ls_opt(av[1], opt);
+			i = 2;
+		}
+		else
+			i = 1;
 		while (i < ac)
 		{
 			ft_putstr(av[i]);
 			ft_putendl(":");
-			file = ft_file_list(av[i], opt);
+			file = ft_file_list(av[i], opt); //mettre un file->next?
 			main_loop(opt, file);
 			i++;
 			if (i < ac)
 				ft_putendl("");
 		}
 	}
-	if (ac <= 3)
+	if (ac < 3)
 		main_loop(opt, file);
 	// ft_total_block(file, total);
 	// ft_printf("total %ld\n", (long)*total);

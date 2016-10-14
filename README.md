@@ -2,11 +2,12 @@
 
 a faire
 - Attention : les messages d'erreur devraient sortir sur la sortie erreur standard (stderr)
-(ok pour ouverture d'un fichier raté)
+(ok pour ouverture d'un fichier raté - fichier inexistant ou droits insuffisants)
 - refaire le main de facon plus elegante
 - utilisation de strerror et perror pour les autres erreurs ? (meme si elles narrivent pas ?)
 - ls sur un fichier affiche le nom du fichier, il va peut etre falloir refaire une LC ? misere.
 Ok c'est certain, il va faloir faire une autre LC ou repenser le main
+- trouver le bug qui fait que l'optiopn -R n'affiche rien ??
 
 notes
 - tri sur le temps, cause du bug -- ( The return value is also stored in tloc, provided that tloc is non-null.)
@@ -19,7 +20,7 @@ bugs connus
 - les dossiers ne sont pas triés dans le bon ordre - ex : ls dir1 dir2
 - option -R n'affiche rien ????
 - inconsistance du total si on fait ls -l . dir1 mais c coherent avec la commande de omzsh (l . dir1)
-- ./ls salut dir1 n'affiche pas l'erreur sur la non existence de salut
+- ./ls salut dir1 n'affiche pas l'erreur sur la non existence de salut (pblm de main ?)
 
 liste des fonctions autorisees
 - write

@@ -6,7 +6,7 @@
 /*   By: tfolly <tfolly@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/30 11:48:10 by tfolly            #+#    #+#             */
-/*   Updated: 2016/10/06 19:13:20 by thibaultfolly    ###   ########.fr       */
+/*   Updated: 2016/10/14 17:32:18 by thibaultfolly    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,9 @@ t_file_ls	*ft_file_list(char *path, t_opt_ls *opt)
 
 	if (!(dirr = opendir(path)))// c'est ici que je dois faire appel a sterror
 	{
+		//ici il faut que je verifie que c'est un dir, si ce n;est pas un dir
+		//je peux me contenter dafficher le nom
+		// if ()
 		// ft_printf("ls: %s: ", path);
 		ft_putstr_fd("ls: ", 2);
 		ft_putstr_fd(path, 2);
