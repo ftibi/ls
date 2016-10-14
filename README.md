@@ -4,9 +4,10 @@ a faire
 - Attention : les messages d'erreur devraient sortir sur la sortie erreur standard (stderr)
 (ok pour ouverture d'un fichier raté - fichier inexistant ou droits insuffisants)
 - refaire le main de facon plus elegante
+NOUVEAU MAIN: idee
+laisser la list sur "." et n'afficher que les fichiers precisés.
+si rien n'est precisé, tout afficher
 - utilisation de strerror et perror pour les autres erreurs ? (meme si elles narrivent pas ?)
-- ls sur un fichier affiche le nom du fichier, il va peut etre falloir refaire une LC ? misere.
-Ok c'est certain, il va faloir faire une autre LC ou repenser le main
 - trouver le bug qui fait que l'optiopn -R n'affiche rien ??
 
 notes

@@ -6,7 +6,7 @@
 /*   By: thibault <thibault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/18 14:52:48 by thibault          #+#    #+#             */
-/*   Updated: 2016/10/14 17:39:17 by thibaultfolly    ###   ########.fr       */
+/*   Updated: 2016/10/14 18:12:06 by thibaultfolly    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,13 @@ static int	main_loop(t_opt_ls *opt, t_file_ls *file)
 int		 main(int ac, char **av)
 {
 	t_file_ls	*file;
+	t_file_ls	*filestart;
 	t_opt_ls	*opt;
 	int			i;
 
 //idee pour reformater
-// mettre le nom de base a "." et le changer que si un param autre que les options est entré
-// il faut definitivement refaire ca de maniere plus elegante
+// mettre le nom de base a "."
+// si des noms de fichier sont precises, ne montrer que ceux la ?
 	// opt = ft_opt_init();
 	// file = ft_file_list(".", opt);
 	// i = 1;
@@ -51,6 +52,7 @@ int		 main(int ac, char **av)
 	// }
 
 	opt = ft_opt_init();
+	file = 0;
 	if (ac == 1)
 		file = ft_file_list(".", opt);
 	else if (ac == 2)
@@ -79,10 +81,29 @@ int		 main(int ac, char **av)
 			i = 1;
 		while (i < ac)
 		{
+			if (!file)
+			{
+				file = ft_file_list(av[i], opt); //mettre un file->next?
+				filestart = file;
+			}
+			// if (file != filestart)
+			// {
+			file->next = ft_file_list(av[i], opt); //mettre un file->next?
+			file = file->next;
+			// }
+			i++;
+
+		}
+		ft_putendl("ici");
+		//ici sort les dir1
+		i = (*av[1] == '-') ? 2 : 1;
+		file = filestart;
+		while (i < ac)
+		{
 			ft_putstr(av[i]);
 			ft_putendl(":");
-			file = ft_file_list(av[i], opt); //mettre un file->next?
 			main_loop(opt, file);
+			file = file->next;
 			i++;
 			if (i < ac)
 				ft_putendl("");
